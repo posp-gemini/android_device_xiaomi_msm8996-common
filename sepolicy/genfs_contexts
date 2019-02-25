@@ -1,12 +1,34 @@
-genfscon debugfs /rmt_storage u:object_r:debugfs_rmt:s0
+
+genfscon proc /sys/kernel/sched_boost                 u:object_r:proc_sysctl_schedboost:s0
+genfscon proc /sys/kernel/sched_downmigrate           u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_freq_dec_notify       u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_freq_inc_notify       u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_init_task_load        u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_migration_cost_ns     u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_migration_fixup       u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_small_task            u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_spill_nr_run          u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_upmigrate             u:object_r:proc_kernel_sched:s0
+genfscon proc /irq                                    u:object_r:proc_irq:s0
+
 
 genfscon proc /buttons       u:object_r:proc_buttons:s0
 genfscon proc /touchpanel    u:object_r:proc_touchpanel:s0
 
-genfscon sysfs /devices/soc/6a00000.ssusb/6a00000.dwc3/gadget/lun0/     u:object_r:sysfs_android_usb:s0
-genfscon sysfs /devices/soc/6a00000.ssusb/power_supply                  u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc/75b5000.i2c/i2c-7/7-001d/power_supply       u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc/msm-bcl-19/power_supply                     u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc/qpnp-fg-22/power_supply                     u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc/qpnp-smbcharger-21/power_supply             u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply                   u:object_r:sysfs_batteryinfo:s0
+
+# debugfs
+genfscon debugfs /wlan_wcnss               u:object_r:debugfs_wlan:s0
+genfscon debugfs /msm_core                 u:object_r:debugfs_msm_core:s0
+genfscon debugfs /rmt_storage              u:object_r:debugfs_rmt:s0
+genfscon debugfs /ipc_logging              u:object_r:debugfs_ipc:s0
+genfscon debugfs /dma_buf/bufinfo          u:object_r:debugfs_bufinfo:s0
+genfscon debugfs /mdp/xlog/dump            u:object_r:debugfs_mdp:s0
+genfscon debugfs /tzdbg/qsee_log           u:object_r:debugfs_qsee_log:s0
+genfscon debugfs /ion                      u:object_r:debugfs_ion:s0
+genfscon debugfs /tcpm/9-0022              u:object_r:debugfs_usb:s0
+genfscon debugfs /ipc_logging/fusb302/log  u:object_r:debugfs_usb:s0
+genfscon debugfs /cnss_runtime_pm                     u:object_r:debugfs_runtime_pm:s0
+genfscon debugfs /cnss-prealloc/status                u:object_r:debugfs_cnss:s0
+genfscon debugfs /ufshcd0                             u:object_r:debugfs_ufs:s0
+genfscon debugfs /sched_features                      u:object_r:debugfs_sched_features:s0
+
